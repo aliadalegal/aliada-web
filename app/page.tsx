@@ -228,7 +228,91 @@ export default function Home() {
             
           </div>
           
-          {/* Banner Guías Digitales */}
+          {/* ===== SECCIÓN DE GUÍAS DIGITALES ===== */}
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-serif text-purple-800 mb-4">
+        📚 Guías Digitales de Aliada
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Guías prácticas en PDF con lenguaje claro, pasos a seguir y modelos de escritos.
+        Tu puerta de entrada a la claridad legal.
+      </p>
+    </div>
+    
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      {/* Guía 1: Cuota Alimentaria */}
+      <div className="bg-white rounded-xl p-6 shadow-lg border-t-4 border-purple-500">
+        <div className="text-4xl mb-4">👶</div>
+        <h3 className="text-xl font-semibold text-purple-800 mb-2">
+          Guía de Cuota Alimentaria
+        </h3>
+        <p className="text-gray-600 mb-4">
+          Todo lo que necesitás saber para reclamar, aumentar y asegurar la cuota alimentaria de tus hijos.
+        </p>
+        <ul className="text-sm text-gray-500 mb-6 space-y-1">
+          <li>✓ Cómo calcularla</li>
+          <li>✓ Cómo reclamarla</li>
+          <li>✓ Cómo aumentarla</li>
+          <li>✓ Modelos de escritos</li>
+        </ul>
+        <a 
+          href="/pdfs/pdf1.pdf"
+          download
+          className="block w-full bg-purple-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+        >
+          📥 Descargar PDF
+        </a>
+      </div>
+      
+      {/* Guía 2: Bienes Matrimoniales */}
+      <div className="bg-white rounded-xl p-6 shadow-lg border-t-4 border-teal-500">
+        <div className="text-4xl mb-4">🏠</div>
+        <h3 className="text-xl font-semibold text-purple-800 mb-2">
+          Guía de Bienes Matrimoniales
+        </h3>
+        <p className="text-gray-600 mb-4">
+          Cómo proteger y dividir los bienes adquiridos durante el matrimonio.
+        </p>
+        <ul className="text-sm text-gray-500 mb-6 space-y-1">
+          <li>✓ Sociedad conyugal</li>
+          <li>✓ Bienes propios</li>
+          <li>✓ Cómo dividirlos</li>
+          <li>✓ Checklist de bienes</li>
+        </ul>
+        <a 
+          href="/pdfs/pdf2.pdf"
+          download
+          className="block w-full bg-teal-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors"
+        >
+          📥 Descargar PDF
+        </a>
+      </div>
+      
+      {/* Card de información (se mantiene) */}
+      <div className="bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl p-6 shadow-lg text-white">
+        <div className="text-4xl mb-4">💡</div>
+        <h3 className="text-xl font-semibold mb-2">
+          ¿Necesitás más claridad?
+        </h3>
+        <p className="mb-6">
+          Si tenés dudas sobre tu situación específica, agendá una consulta personalizada.
+        </p>
+        <a 
+          href="#agenda"
+          className="block w-full bg-white text-purple-700 text-center py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+        >
+          📅 Agendar consulta
+        </a>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
           <div className="mt-12 bg-gradient-to-r from-purple-500 to-orange-400 rounded-xl p-8 text-center text-white">
             <h3 className="text-2xl font-serif mb-4">
               📚 Guías Digitales de Aliada
