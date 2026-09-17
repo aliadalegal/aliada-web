@@ -315,7 +315,90 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== CTA FINAL ===== */}
+      {/* ===== SECCIÓN DE AGENDA ===== */}
+<section id="agenda" className="py-16 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto">
+      
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-serif text-purple-800 mb-4">
+          Agenda tu Consulta
+        </h2>
+        <p className="text-xl text-gray-600">
+          Selecciona el horario que mejor te convenga
+        </p>
+      </div>
+      
+      {/* Widget de Calendly */}
+      <div className="bg-gray-50 p-4 rounded-xl">
+        <iframe
+          src="https://calendly.com/aliada-as-legal"
+          width="100%"
+          height="600px"
+          frameBorder="0"
+          title="Agendar consulta con Aliada"
+        />
+      </div>
+      
+      <div className="mt-8 text-center">
+        <p className="text-gray-600 mb-4">
+          ¿Prefieres contactarme directamente?
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://wa.me/5493874623956"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
+          >
+            💬 WhatsApp
+          </a>
+          
+          <a 
+            href="mailto:hola@aliada.com"
+            className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+          >
+            📧 Email
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{/* ===== CTA FINAL ===== */}
+<section className="py-16 bg-purple-700 text-white">
+  <div className="container mx-auto px-4 text-center">
+    
+    <h2 className="text-3xl md:text-4xl font-serif mb-6">
+      ¿Lista para dejar de ir a ciegas?
+    </h2>
+    
+    <p className="text-xl mb-8 max-w-2xl mx-auto">
+      Agenda tu consulta hoy y empieza a construir tu estrategia legal con claridad y respaldo.
+    </p>
+    
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <a 
+        href="#agenda"
+        className="bg-orange-400 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 transition-colors"
+      >
+        📅 Agenda tu consulta
+      </a>
+      
+      <a 
+        href="https://wa.me/5493874623956"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors inline-flex items-center justify-center"
+      >
+        💬 Escríbeme por WhatsApp
+      </a>
+    </div>
+    
+  </div>
+</section>
       <section className="py-16 bg-purple-700 text-white">
         <div className="container mx-auto px-4 text-center">
           
