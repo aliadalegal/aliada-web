@@ -14,7 +14,6 @@ import {
   QuoteIcon,
   ShieldIcon,
   SirenIcon,
-  SparkIcon,
   StarIcon,
   VoiceIcon,
   WhatsAppIcon,
@@ -74,36 +73,20 @@ export default function Home() {
               sizes="100vw"
               className="object-cover object-center opacity-60"
             />
-            {/* Foco crema sobre el bloque de texto y fundido suave arriba y
-                abajo: la foto se ve en los bordes y el texto queda legible. */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_62%_62%_at_50%_46%,var(--color-cream-100)_28%,transparent_100%)]" />
-            <div className="absolute inset-0 bg-gradient-to-b from-cream-100/60 via-transparent to-cream-100/80" />
           </div>
 
           <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 md:py-28">
-            <p className="inline-flex items-center gap-2 rounded-full border border-sage-200 bg-sage-100 px-4 py-2 text-sm font-semibold text-sage-700">
-              <SparkIcon className="h-4 w-4" />
-              Derecho Consciente · Empoderamiento para mujeres
-            </p>
-
             <h1
               id="titulo-hero"
-              className="mt-6 text-4xl leading-tight font-semibold text-cocoa-800 sm:text-5xl md:text-6xl"
+              className="text-4xl leading-tight font-semibold text-cocoa-800 sm:text-5xl md:text-6xl"
             >
-              Recuperá el poder sobre tu vida{" "}
-              <span className="text-clay-600">y tus derechos</span>
+              Recuperá el poder sobre tu vida y tus derechos
             </h1>
 
-            <p className="relative mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cocoa-600 sm:text-xl">
-              <span
-                aria-hidden="true"
-                className="absolute -inset-x-6 -inset-y-4 rounded-[2.5rem] bg-cream-100/70 blur-2xl"
-              />
-              <span className="relative">
-                Aliada no es un estudio jurídico tradicional. Es claridad,
-                estrategia y acompañamiento para que dejes de decidir a ciegas
-                y reclames lo que te corresponde.
-              </span>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cocoa-800 sm:text-xl">
+              Aliada no es un estudio jurídico tradicional. Es claridad,
+              estrategia y acompañamiento para que dejes de decidir a ciegas y
+              reclames lo que te corresponde.
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
