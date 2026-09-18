@@ -66,9 +66,18 @@ export default function Home() {
           className="relative overflow-hidden"
         >
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-blush-200/70" />
-            <div className="absolute top-40 -left-32 h-72 w-72 rounded-full bg-blush-100" />
-            <div className="absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-cream-200" />
+            <Image
+              src="/images/hero-aliadas.jpg"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center opacity-60"
+            />
+            {/* Foco crema sobre el bloque de texto y fundido suave arriba y
+                abajo: la foto se ve en los bordes y el texto queda legible. */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_62%_62%_at_50%_46%,var(--color-cream-100)_28%,transparent_100%)]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-cream-100/60 via-transparent to-cream-100/80" />
           </div>
 
           <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 md:py-28">
@@ -85,10 +94,16 @@ export default function Home() {
               <span className="text-clay-600">y tus derechos</span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cocoa-600 sm:text-xl">
-              Aliada no es un estudio jurídico tradicional. Es claridad,
-              estrategia y acompañamiento para que dejes de decidir a ciegas y
-              reclames lo que te corresponde.
+            <p className="relative mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cocoa-600 sm:text-xl">
+              <span
+                aria-hidden="true"
+                className="absolute -inset-x-6 -inset-y-4 rounded-[2.5rem] bg-cream-100/70 blur-2xl"
+              />
+              <span className="relative">
+                Aliada no es un estudio jurídico tradicional. Es claridad,
+                estrategia y acompañamiento para que dejes de decidir a ciegas
+                y reclames lo que te corresponde.
+              </span>
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
