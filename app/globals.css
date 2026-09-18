@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+@theme {
+  /* Paleta Aliada — tomada del plan de negocios: cremas, rosas empolvados,
+     arcilla, cacao y verde salvia ("Derecho consciente"). */
+  --color-cream-50: #fdfaf7;
+  --color-cream-100: #f9f2ec;
+  --color-cream-200: #f3e7dd;
+
+  --color-blush-100: #f6e5df;
+  --color-blush-200: #efd6cd;
+  --color-blush-300: #e4c4ba;
+
+  --color-clay-300: #d9b3a9;
+  --color-clay-400: #c89b90;
+  --color-clay-500: #b07f73;
+  --color-clay-600: #966052;
+  --color-clay-700: #7d4a3f;
+
+  --color-cocoa-500: #7d5a50;
+  --color-cocoa-600: #6e4a41;
+  --color-cocoa-700: #593a33;
+  --color-cocoa-800: #462c26;
+  --color-cocoa-900: #33201c;
+
+  --color-sage-100: #e6efe8;
+  --color-sage-200: #cddfd2;
+  --color-sage-400: #6f967e;
+  --color-sage-500: #5e8a6e;
+  --color-sage-600: #47705a;
+  --color-sage-700: #3a5d49;
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-script), "Segoe Script", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sitio de marca: siempre claro, evita que el modo oscuro del SO rompa la paleta. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream-100);
+  color: var(--color-cocoa-800);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-blush-200);
+  color: var(--color-cocoa-900);
+}
+
+/* Foco visible y consistente para navegación por teclado (accesibilidad). */
+:focus-visible {
+  outline: 3px solid var(--color-clay-700);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enlace "Saltar al contenido" para lectores de pantalla y teclado. */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background-color: var(--color-clay-700);
+  color: #fff;
+  font-weight: 600;
+  transition: top 150ms ease;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
