@@ -275,7 +275,7 @@ export default function Home() {
             <SectionHeading
               kicker="Nuestros valores"
               title="Así trabajamos con vos"
-              subtitle="Cinco compromisos que hacen que el servicio se sienta como un abrazo, sin dejar de ser jurídicamente riguroso."
+              subtitle="Seis compromisos que hacen que el servicio se sienta como un abrazo, sin dejar de ser jurídicamente riguroso."
               titleId="titulo-valores"
             />
 
