@@ -1,51 +1,41 @@
-type LogoProps = {
-  className?: string;
-};
+import Image from "next/image";
 
-/** Marca gráfica: dos hojas enfrentadas, en eco del logo del plan de marca. */
-export function LogoMark({ className }: LogoProps) {
+const LOGO_URL = "/marca/logo-aliada.png"; // logotipo completo (487×488)
+const MARCA_URL = "/marca/marca-aliada.png"; // marca de las hojas (80×121)
+
+/** Logotipo circular completo: marca + "Aliada" + "Derecho consciente". */
+export function LogoFull({
+  size = 48,
+  priority = false,
+  className,
+}: {
+  size?: number;
+  priority?: boolean;
+  className?: string;
+}) {
   return (
-    <svg
-      viewBox="0 0 48 48"
-      fill="none"
+    <Image
+      src={LOGO_URL}
+      alt=""
       aria-hidden="true"
+      width={size}
+      height={size}
+      priority={priority}
       className={className}
-    >
-      <path
-        d="M17.5 4.5C8.5 15 8.5 30.5 18.5 43"
-        stroke="currentColor"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M30.5 4.5C39.5 15 39.5 30.5 29.5 43"
-        stroke="currentColor"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M24 10c3.2 4.8 3.2 9.7 0 14.4-3.2-4.7-3.2-9.6 0-14.4Z"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinejoin="round"
-      />
-    </svg>
+    />
   );
 }
 
-/** Logotipo completo: marca + palabra en caligrafía + lema. */
-export function Logo({ compact = false }: { compact?: boolean }) {
+/** Marca gráfica de las hojas, recortada del logo original. */
+export function LogoMark({ className }: { className?: string }) {
   return (
-    <span className="flex items-center gap-2.5">
-      <LogoMark className="h-9 w-9 shrink-0 text-clay-700" />
-      <span className="flex flex-col leading-none">
-        <span className="font-script text-3xl text-cocoa-800">Aliada</span>
-        {!compact && (
-          <span className="mt-0.5 text-[0.65rem] font-semibold tracking-[0.22em] text-sage-600 uppercase">
-            Derecho consciente
-          </span>
-        )}
-      </span>
-    </span>
+    <Image
+      src={MARCA_URL}
+      alt=""
+      aria-hidden="true"
+      width={80}
+      height={121}
+      className={className}
+    />
   );
 }

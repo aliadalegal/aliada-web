@@ -1,4 +1,4 @@
-import { LogoMark } from "./Logo";
+import { LogoFull } from "./Logo";
 import { InstagramIcon, MailIcon, WhatsAppIcon } from "./icons";
 
 export function Footer() {
@@ -7,12 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2.5">
-              <LogoMark className="h-9 w-9 text-clay-300" />
-              <span className="font-script text-3xl text-cream-100">
-                Aliada
-              </span>
-            </div>
+            <LogoFull size={58} />
             <p className="mt-4 text-sm leading-relaxed text-blush-200/80">
               El primer ecosistema de Derecho Consciente y empoderamiento
               económico para mujeres en el NOA, con proyección federal.

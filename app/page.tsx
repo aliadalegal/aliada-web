@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
-import { LogoMark } from "@/components/Logo";
+import { LogoFull, LogoMark } from "@/components/Logo";
 import { Navbar } from "@/components/Navbar";
 import {
   BookIcon,
@@ -188,6 +189,81 @@ export default function Home() {
                 cuando tenés una aliada, todo cambia.
               </strong>
             </p>
+          </div>
+        </section>
+
+        {/* ===== SOBRE MÍ ===== */}
+        <section
+          id="sobre-mi"
+          aria-labelledby="titulo-sobre-mi"
+          className="bg-cream-50 py-20"
+        >
+          <div className="mx-auto max-w-5xl px-4 sm:px-6">
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <figure className="relative mx-auto w-full max-w-xl">
+                <div
+                  aria-hidden="true"
+                  className="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-blush-200"
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute -right-4 -bottom-6 h-16 w-16 rounded-full bg-sage-200"
+                />
+                <div className="relative overflow-hidden rounded-[2.5rem] shadow-lg">
+                  <Image
+                    src="/images/carolina-guerrero.jpg"
+                    alt="Carolina Guerrero, fundadora de Aliada, en su estudio grabando contenido sobre derechos de las mujeres"
+                    width={1280}
+                    height={853}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+                <span className="absolute -bottom-7 right-8 flex h-20 w-20 items-center justify-center rounded-full bg-cream-50 shadow-md">
+                  <LogoMark className="h-11 w-auto" />
+                </span>
+              </figure>
+
+              <div>
+                <p className="text-xs font-semibold tracking-[0.24em] text-clay-700 uppercase">
+                  Sobre mí
+                </p>
+                <h2
+                  id="titulo-sobre-mi"
+                  className="mt-3 text-3xl font-semibold text-cocoa-800 sm:text-4xl"
+                >
+                  Hola, soy Carolina. Tu aliada en el derecho.
+                </h2>
+                <p className="mt-5 leading-relaxed text-cocoa-600">
+                  Soy abogada y trabajé el derecho de las mujeres por un
+                  despertar: entendí que empoderar a una mujer desde el
+                  reconocimiento de sus derechos no es solo ganar un juicio,
+                  puede ser una revolución y un paso concreto hacia un mundo
+                  más equitativo.
+                </p>
+                <p className="mt-4 leading-relaxed text-cocoa-600">
+                  Creé el método Mapa para que ninguna mujer tenga que
+                  defenderse con la voz baja: traducimos lo complejo a un plan
+                  simple y te sostenemos en equipo para que no transites ningún
+                  proceso con culpa, vergüenza o miedo.
+                </p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {[
+                    "Derecho de familia",
+                    "Perspectiva de género",
+                    "Método Mapa",
+                    "Derecho Consciente",
+                  ].map((chip) => (
+                    <li
+                      key={chip}
+                      className="rounded-full border border-blush-300 bg-white px-4 py-1.5 text-sm font-medium text-cocoa-700"
+                    >
+                      {chip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -665,72 +741,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===== SOBRE MÍ ===== */}
-        <section
-          id="sobre-mi"
-          aria-labelledby="titulo-sobre-mi"
-          className="bg-cream-50 py-20"
-        >
-          <div className="mx-auto max-w-5xl px-4 sm:px-6">
-            <div className="grid items-center gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
-              <div className="relative mx-auto w-full max-w-xs">
-                <div
-                  aria-hidden="true"
-                  className="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-blush-200"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute -right-4 -bottom-6 h-16 w-16 rounded-full bg-sage-200"
-                />
-                <div className="relative flex aspect-square items-center justify-center rounded-[2.5rem] bg-blush-100">
-                  <span className="font-script text-7xl text-clay-600">CG</span>
-                  <LogoMark className="absolute right-6 bottom-6 h-10 w-10 text-clay-400" />
-                </div>
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold tracking-[0.24em] text-clay-700 uppercase">
-                  Sobre mí
-                </p>
-                <h2
-                  id="titulo-sobre-mi"
-                  className="mt-3 text-3xl font-semibold text-cocoa-800 sm:text-4xl"
-                >
-                  Hola, soy Carolina. Tu aliada en el derecho.
-                </h2>
-                <p className="mt-5 leading-relaxed text-cocoa-600">
-                  Soy abogada y trabajé el derecho de las mujeres por un
-                  despertar: entendí que empoderar a una mujer desde el
-                  reconocimiento de sus derechos no es solo ganar un juicio,
-                  puede ser una revolución y un paso concreto hacia un mundo
-                  más equitativo.
-                </p>
-                <p className="mt-4 leading-relaxed text-cocoa-600">
-                  Creé el método Mapa para que ninguna mujer tenga que
-                  defenderse con la voz baja: traducimos lo complejo a un plan
-                  simple y te sostenemos en equipo para que no transites ningún
-                  proceso con culpa, vergüenza o miedo.
-                </p>
-                <ul className="mt-6 flex flex-wrap gap-2">
-                  {[
-                    "Derecho de familia",
-                    "Perspectiva de género",
-                    "Método Mapa",
-                    "Derecho Consciente",
-                  ].map((chip) => (
-                    <li
-                      key={chip}
-                      className="rounded-full border border-blush-300 bg-white px-4 py-1.5 text-sm font-medium text-cocoa-700"
-                    >
-                      {chip}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ===== PREGUNTAS FRECUENTES ===== */}
         <section
           id="preguntas"
@@ -850,7 +860,7 @@ export default function Home() {
           </div>
 
           <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-            <LogoMark className="mx-auto h-12 w-12 text-sage-200" />
+            <LogoFull size={72} className="mx-auto" />
             <h2
               id="titulo-cta"
               className="mt-6 text-3xl font-semibold sm:text-4xl"

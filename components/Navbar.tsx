@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Logo } from "./Logo";
+import { LogoFull } from "./Logo";
 import { CloseIcon, MenuIcon } from "./icons";
 
 const links = [
+  { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#servicios", label: "Servicios" },
   { href: "#guias", label: "Guías" },
   { href: "#historias", label: "Historias" },
-  { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#preguntas", label: "Preguntas" },
 ];
 
@@ -34,7 +34,7 @@ export function Navbar() {
           aria-label="Aliada — ir al inicio"
           onClick={() => setOpen(false)}
         >
-          <Logo compact />
+          <LogoFull size={46} priority />
         </Link>
 
         <nav aria-label="Navegación principal" className="hidden lg:block">
