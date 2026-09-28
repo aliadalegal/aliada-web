@@ -83,7 +83,7 @@ export default function Home() {
               Recuperá el poder sobre tu vida y tus derechos
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cocoa-800 sm:text-xl">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cocoa-800 sm:text-xl font-semibold">
               Aliada no es un estudio jurídico tradicional. Es claridad,
               estrategia y acompañamiento para que dejes de decidir a ciegas y
               reclames lo que te corresponde.
@@ -104,27 +104,27 @@ export default function Home() {
               </a>
             </div>
 
-            <p className="mt-6 text-sm text-cocoa-500">
+            <p className="mt-6 text-sm text-cocoa-800">
               Atención online para todo el país · Salta · Jujuy · Buenos Aires
             </p>
 
             <dl className="mx-auto mt-14 flex max-w-2xl flex-col items-center justify-center gap-8 sm:flex-row sm:gap-10">
               <div className="text-center">
-                <dt className="order-2 text-sm text-cocoa-600">
+                <dt className="order-2 text-sm text-cocoa-800">
                   Seguidoras orgánicas
                 </dt>
                 <dd className="text-3xl font-bold text-clay-700">7.000+</dd>
               </div>
               <div aria-hidden="true" className="hidden h-12 w-px bg-blush-300 sm:block" />
               <div className="text-center">
-                <dt className="order-2 text-sm text-cocoa-600">
+                <dt className="order-2 text-sm text-cocoa-800">
                   Mujeres ya pidieron ayuda
                 </dt>
                 <dd className="text-3xl font-bold text-clay-700">150+</dd>
               </div>
               <div aria-hidden="true" className="hidden h-12 w-px bg-blush-300 sm:block" />
               <div className="text-center">
-                <dt className="order-2 text-sm text-cocoa-600">
+                <dt className="order-2 text-sm text-cocoa-800">
                   Dedicado a mujeres
                 </dt>
                 <dd className="text-3xl font-bold text-clay-700">100%</dd>
