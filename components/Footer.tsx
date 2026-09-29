@@ -5,12 +5,16 @@ export function Footer() {
   return (
     <footer className="bg-cocoa-900 text-cream-100">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div>
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2">
             <LogoFull size={58} />
             <p className="mt-4 text-sm leading-relaxed text-blush-200/80">
-              El primer ecosistema de Derecho Consciente y empoderamiento
-              económico para mujeres en el NOA, con proyección federal.
+              Aliada es un espacio de asesoramiento jurídico para mujeres que
+              quieren comprender sus opciones, proteger lo que les importa y
+              tomar decisiones conscientes sobre su vida.
+            </p>
+            <p className="mt-3 text-sm font-semibold text-sage-200/90">
+              El derecho como herramienta de autonomía.
             </p>
             <ul className="mt-5 flex gap-3">
               <li>
@@ -54,13 +58,23 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-blush-200/85">
               <li>Aliada S.O.S</li>
               <li>Aliada Preventiva</li>
+              <li>Aliada Estratégica</li>
               <li>Aliada Empoderada</li>
-              <li>Aliada Estrategia</li>
-              <li>Aliada Guías digitales</li>
             </ul>
           </nav>
 
-          <div>
+          <nav aria-label="Recursos">
+            <h2 className="text-sm font-semibold tracking-[0.18em] text-clay-300 uppercase">
+              Recursos
+            </h2>
+            <ul className="mt-4 space-y-2.5 text-sm text-blush-200/85">
+              <li>Guías gratuitas</li>
+              <li>Comunidad</li>
+              <li>Testimonios</li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Contacto">
             <h2 className="text-sm font-semibold tracking-[0.18em] text-clay-300 uppercase">
               Contacto
             </h2>
@@ -85,27 +99,16 @@ export function Footer() {
               </li>
               <li>@aliada.derecho en Instagram</li>
             </ul>
-          </div>
-
-          <div>
-            <h2 className="text-sm font-semibold tracking-[0.18em] text-clay-300 uppercase">
-              Atención
-            </h2>
-            <ul className="mt-4 space-y-2.5 text-sm text-blush-200/85">
-              <li>Lunes a viernes: 9 a 18 h</li>
-              <li>Sábados: 9 a 13 h</li>
-              <li>Consultas online en todo el país</li>
-            </ul>
-          </div>
+          </nav>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-blush-200/60">
           <p>
-            © 2026 Aliada · Derecho Consciente. Todos los derechos reservados.
+            © 2026 Aliada · Derecho como herramienta de autonomía.
           </p>
           <p className="mx-auto mt-2 max-w-xl leading-relaxed">
-            La información de este sitio tiene carácter general y no sustituye
-            el asesoramiento legal personalizado sobre tu caso.
+            La información publicada en este sitio es de carácter general y no
+            constituye asesoramiento jurídico personalizado.
           </p>
         </div>
       </div>
