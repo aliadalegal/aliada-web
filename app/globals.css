@@ -1,37 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta Aliada — tomada del plan de negocios: cremas, rosas empolvados,
-     arcilla, cacao y verde salvia ("Derecho consciente"). */
-  --color-cream-50: #fdfaf7;
-  --color-cream-100: #f9f2ec;
-  --color-cream-200: #f3e7dd;
+  /* Paleta Aliada — Nueva identidad de marca */
+  --color-green-primary: #075B3B;
+  --color-green-secondary: #0A6A47;
+  --color-pink: #E7BBB5;
+  --color-pink-light: #F5DEDA;
+  --color-cream: #FBF4EF;
+  --color-carbon: #171B18;
+  --color-gray: #6F746F;
+  --color-white: #FFFFFF;
 
-  --color-blush-100: #f6e5df;
-  --color-blush-200: #efd6cd;
-  --color-blush-300: #e4c4ba;
-
-  --color-clay-300: #d9b3a9;
-  --color-clay-400: #c89b90;
-  --color-clay-500: #b07f73;
-  --color-clay-600: #966052;
-  --color-clay-700: #7d4a3f;
-
-  --color-cocoa-500: #7d5a50;
-  --color-cocoa-600: #6e4a41;
-  --color-cocoa-700: #593a33;
-  --color-cocoa-800: #462c26;
-  --color-cocoa-900: #33201c;
-
-  --color-sage-100: #e6efe8;
-  --color-sage-200: #cddfd2;
-  --color-sage-400: #6f967e;
-  --color-sage-500: #5e8a6e;
-  --color-sage-600: #47705a;
-  --color-sage-700: #3a5d49;
-
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-script: var(--font-script), "Segoe Script", cursive;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-dm-serif), ui-serif, Georgia, serif;
+  --font-hand: var(--font-caveat), cursive;
 }
 
 html {
@@ -44,20 +26,20 @@ html {
 }
 
 body {
-  background-color: var(--color-cream-100);
-  color: var(--color-cocoa-800);
+  background-color: var(--color-cream);
+  color: var(--color-carbon);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background-color: var(--color-blush-200);
-  color: var(--color-cocoa-900);
+  background-color: var(--color-pink);
+  color: var(--color-carbon);
 }
 
 /* Foco visible y consistente para navegación por teclado (accesibilidad). */
 :focus-visible {
-  outline: 3px solid var(--color-clay-700);
+  outline: 3px solid var(--color-green-primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -70,7 +52,7 @@ body {
   z-index: 100;
   padding: 0.75rem 1.25rem;
   border-radius: 0 0 0.75rem 0.75rem;
-  background-color: var(--color-clay-700);
+  background-color: var(--color-green-primary);
   color: #fff;
   font-weight: 600;
   transition: top 150ms ease;

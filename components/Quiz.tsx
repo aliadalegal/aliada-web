@@ -3,219 +3,20 @@
 import { useState } from "react";
 import { CheckIcon } from "./icons";
 
-const questions = [
-  {
-    id: 1,
-    text: "¿Qué describe mejor el momento en el que estás?",
-    options: [
-      {
-        label: "Estoy por tomar una decisión importante y quiero protegerme antes de hacerlo.",
-        value: "preventiva",
-        points: 3,
-      },
-      {
-        label: "Ya ocurrió algo y necesito saber qué hacer ahora.",
-        value: "sos",
-        points: 3,
-      },
-      {
-        label: "Tengo un conflicto que requiere analizar información y estrategia.",
-        value: "estrategica",
-        points: 3,
-      },
-      {
-        label: "Tengo una mediación o conversación importante y quiero prepararme.",
-        value: "empoderada",
-        points: 3,
-      },
-    ],
-  },
-  {
-    id: 2,
-    text: "¿Qué necesitás principalmente?",
-    options: [
-      {
-        label: "Prevenir problemas futuros.",
-        value: "preventiva",
-        points: 3,
-      },
-      {
-        label: "Resolver una duda puntual o urgente.",
-        value: "sos",
-        points: 3,
-      },
-      {
-        label: "Comprender profundamente mi situación y diseñar una estrategia.",
-        value: "estrategica",
-        points: 3,
-      },
-      {
-        label: "Prepararme para negociar o comunicarme con la otra persona.",
-        value: "empoderada",
-        points: 3,
-      },
-    ],
-  },
-  {
-    id: 3,
-    text: "¿Ya existe un conflicto?",
-    options: [
-      {
-        label: "No. Quiero anticiparme.",
-        value: "preventiva",
-        points: 3,
-      },
-      {
-        label: "Sí, pero necesito saber cuál es el próximo paso inmediato.",
-        value: "sos",
-        points: 3,
-      },
-      {
-        label: "Sí, y necesito analizarlo en profundidad.",
-        value: "estrategica",
-        points: 3,
-      },
-      {
-        label: "Sí, y próximamente tengo una mediación o instancia de negociación.",
-        value: "empoderada",
-        points: 3,
-      },
-    ],
-  },
-  {
-    id: 4,
-    text: "¿Cuál de estas situaciones se parece más a la tuya?",
-    options: [
-      {
-        label: "Convivencia, matrimonio, llegada de un hijo, patrimonio o una decisión familiar importante.",
-        value: "preventiva",
-        points: 3,
-      },
-      {
-        label: "Una notificación, documento o situación inesperada.",
-        value: "sos",
-        points: 3,
-      },
-      {
-        label: "Alimentos, ingresos, patrimonio, situación económica del otro progenitor/ex pareja u otro conflicto que requiere investigación.",
-        value: "estrategica",
-        points: 3,
-      },
-      {
-        label: "Mediación, negociación, acuerdo o conversación en la que necesitás prepararte.",
-        value: "empoderada",
-        points: 3,
-      },
-    ],
-  },
-  {
-    id: 5,
-    text: "¿Qué resultado te gustaría obtener?",
-    options: [
-      {
-        label: "Saber cómo prevenir riesgos.",
-        value: "preventiva",
-        points: 2,
-      },
-      {
-        label: "Saber exactamente qué hacer ahora.",
-        value: "sos",
-        points: 2,
-      },
-      {
-        label: "Tener una estrategia integral.",
-        value: "estrategica",
-        points: 2,
-      },
-      {
-        label: "Llegar preparada, segura y con límites claros.",
-        value: "empoderada",
-        points: 2,
-      },
-    ],
-  },
-];
-
-const serviceDetails = {
-  preventiva: {
-    title: "ALIADA PREVENTIVA",
-    description: "Consulta de resguardo. Un espacio estratégico de 40 minutos para analizar decisiones familiares o patrimoniales antes de asumir compromisos importantes.",
-    price: "$50.000",
-    duration: "40 minutos",
-    cta: "QUIERO PREVENIR",
-    link: "#agenda",
-    features: [
-      "Análisis de tu situación civil y patrimonial",
-      "Identificación de riesgos",
-      "Alternativas legales",
-      "Hoja de ruta digital",
-    ],
-    reason:
-      "Parece que estás por tomar una decisión importante y querés proteger lo que construiste antes de hacerlo.",
-  },
-  sos: {
-    title: "ALIADA SOS",
-    description: "Consultoría de claridad inmediata. Para cuando algo acaba de pasar y necesitás saber qué hacer ahora.",
-    price: "$75.000",
-    duration: "30 minutos",
-    cta: "NECESITO CLARIDAD",
-    link: "#agenda",
-    features: [
-      "Lectura express",
-      "Asesoramiento personalizado",
-      "Definición del próximo paso inmediato",
-    ],
-    reason:
-      "Parece que estás atravesando una situación que ya está ocurriendo y necesitás entender rápidamente qué está pasando y cuál puede ser tu próximo paso.",
-  },
-  estrategica: {
-    title: "ALIADA ESTRATÉGICA",
-    description: "Diagnóstico estratégico e informe de solvencia. Para situaciones que necesitan algo más que una respuesta puntual.",
-    price: "$80.000",
-    duration: "60 minutos + informe",
-    cta: "QUIERO ANALIZAR MI CASO",
-    link: "#agenda",
-    features: [
-      "Sesión estratégica de 60 minutos",
-      "Investigación técnica patrimonial",
-      "Informe",
-      "Retroalimentación digital",
-      "Estrategia diseñada para el caso",
-    ],
-    reason:
-      "Parece que estás atravesando un conflicto que requiere análisis profundo y estrategia integral.",
-  },
-  empoderada: {
-    title: "ALIADA EMPODERADA",
-    description: "Preparación integral para mediación. Para llegar a una mediación sabiendo qué querés, qué podés negociar y cuáles son tus límites.",
-    price: "$75.000",
-    duration: "Preparación para mediación",
-    cta: "QUIERO PREPARARME",
-    link: "#agenda",
-    features: [
-      "Preparación estratégica",
-      "Simulación",
-      "Diseño de propuestas",
-      "Comunicación asertiva",
-      "Guía digital",
-    ],
-    reason:
-      "Parece que tienes una mediación o conversación importante por delante y querés prepararte para negociar sin perder de vista tus límites.",
-  },
-};
-
 export function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+
+  // Mapa: índice de pregunta (0..3) -> índice de la opción elegida en esa pregunta.
+  // Se guarda el ÍNDICE (no el value) porque los values se repiten dentro
+  // de una misma pregunta (p. ej. "estrategica" aparece 2 veces en la pregunta 2).
+  const [answers, setAnswers] = useState<Record<number, number>>({});
   const [showResult, setShowResult] = useState(false);
-  const [recommended, setRecommended] = useState<"preventiva" | "sos" | "estrategica" | "empoderada">(
-    "sos"
-  );
+  const [recommended, setRecommended] = useState<
+    "preventiva" | "sos" | "estrategica" | "empoderada" | "contact"
+  >("sos");
 
-  const currentAnswer = answers[currentQuestion];
-
-  const handleOptionSelect = (value: string, questionIndex: number) => {
-    const newAnswers = { ...answers, [questionIndex]: value };
+  const handleOptionSelect = (optionIndex: number, questionIndex: number) => {
+    const newAnswers = { ...answers, [questionIndex]: optionIndex };
     setAnswers(newAnswers);
 
     // Verificar si completó todas las preguntas
@@ -227,7 +28,17 @@ export function Quiz() {
     }
   };
 
-  const calculateRecommended = (userAnswers: Record<number, string>) => {
+  const calculateRecommended = (userAnswers: Record<number, number>) => {
+    // Derivar el value de cada respuesta a partir del índice de opción guardado.
+    // values[i] = value elegido en la pregunta i (índices 0..3).
+    const values = questions.map((question, questionIndex) => {
+      const optionIndex = userAnswers[questionIndex];
+      return optionIndex !== undefined
+        ? question.options[optionIndex]?.value
+        : undefined;
+    });
+
+    // Contar frecuencias de cada servicio (sobre las 4 preguntas)
     const counts: Record<string, number> = {
       preventiva: 0,
       sos: 0,
@@ -235,155 +46,204 @@ export function Quiz() {
       empoderada: 0,
     };
 
-    for (let i = 1; i <= 4; i++) {
-      const answer = userAnswers[i];
-      if (answer && counts[answer] !== undefined) {
-        counts[answer]++;
+    for (const value of values) {
+      if (value && counts[value] !== undefined) {
+        counts[value]++;
       }
     }
 
-    // Pregunta 5 da 2 puntos
-    const q5 = userAnswers[5];
-    if (q5 && counts[q5] !== undefined) {
-      counts[q5]++;
-    }
-
-    // Encontrar el servicio con más puntos
+    // Encontrar el servicio con mayor puntuación
     let maxCount = 0;
-    let recommendedService: keyof typeof counts = "sos";
+    let recommendedService: string | null = null;
 
     for (const [service, count] of Object.entries(counts)) {
       if (count > maxCount) {
         maxCount = count;
-        recommendedService = service as keyof typeof counts;
+        recommendedService = service;
       }
     }
 
-    // Reglas de desempate
-    if (recommendedService === "preventiva") {
-      // Si no hay conflictos en las primeras 4 preguntas, es preventiva
-      const hasConflict = Object.values(userAnswers).some((a) =>
-        ["sos", "estrategica", "empoderada"].includes(a)
-      );
-      if (!hasConflict) {
-        setRecommended("preventiva");
-        return;
-      }
+    // Si no hay respuestas suficientes, mostrar contacto
+    if (!recommendedService || maxCount <= 1) {
+      setRecommended("contact");
+      return;
     }
 
-    if (recommendedService === "sos") {
-      // Si hay urgencia en la pregunta 3, es SOS
-      const q3 = userAnswers[3];
-      if (q3 === "sos") {
-        setRecommended("sos");
-        return;
-      }
+    // Preguntas por índice CORRECTO (0..3)
+    const q1 = values[0]; // ¿En qué momento estás?
+    const q2 = values[1]; // ¿Qué necesitás resolver?
+    const q3 = values[2]; // ¿Necesitás analizar información o documentación?
+    const q4 = values[3]; // ¿Qué querés obtener de la consulta?
+
+    // Regla 1: Prevención
+    if (q1 === "preventiva") {
+      setRecommended("preventiva");
+      return;
     }
 
-    if (recommendedService === "empoderada") {
-      // Si hay mediación próxima, es Empoderada
-      const q4 = userAnswers[4];
-      if (q4 === "empoderada") {
-        setRecommended("empoderada");
-        return;
-      }
+    // Regla 2: Mediación
+    if (q4 === "empoderada") {
+      setRecommended("empoderada");
+      return;
     }
 
-    if (recommendedService === "estrategica") {
-      // Si no hay mediación y se necesita análisis profundo
-      const q4 = userAnswers[4];
-      if (q4 !== "empoderada") {
-        setRecommended("estrategica");
-        return;
-      }
+    // Regla 3: Complejidad (tiene prioridad sobre SOS)
+    if (q2 === "estrategica" || q3 === "estrategica") {
+      setRecommended("estrategica");
+      return;
     }
 
-    setRecommended(recommendedService as "preventiva" | "sos" | "estrategica" | "empoderada");
-  };
-
-  const resetQuiz = () => {
-    setCurrentQuestion(0);
-    setAnswers({});
-    setShowResult(false);
+    // Regla 4: SOS
     setRecommended("sos");
   };
 
+  const questions = [
+    {
+      id: 1,
+      text: "¿En qué momento estás?",
+      options: [
+        {
+          label: "A. Estoy por tomar una decisión importante y quiero saber cómo protegerme antes.",
+          value: "preventiva",
+        },
+        {
+          label: "B. Ya ocurrió algo y necesito saber qué hacer ahora.",
+          value: "sos",
+        },
+        {
+          label: "C. Estoy atravesando un conflicto y necesito analizar mi situación.",
+          value: "estrategica",
+        },
+        {
+          label: "D. Tengo una mediación próxima y necesito prepararme.",
+          value: "empoderada",
+        },
+      ],
+    },
+    {
+      id: 2,
+      text: "¿Qué necesitás resolver?",
+      options: [
+        {
+          label: "A. Una duda puntual. Necesito saber qué significa algo.",
+          value: "sos",
+        },
+        {
+          label: "B. Necesito analizar información o documentos para diseñar una estrategia.",
+          value: "estrategica",
+        },
+        {
+          label: "C. Necesito prepararme para negociar o comunicarme en una mediación.",
+          value: "empoderada",
+        },
+        {
+          label: "D. Necesito conocer información económica o patrimonial.",
+          value: "estrategica",
+        },
+      ],
+    },
+    {
+      id: 3,
+      text: "¿Necesitás analizar información o documentación para comprender tu situación completa?",
+      options: [
+        {
+          label: "A. No. Solo necesito una respuesta concreta.",
+          value: "sos",
+        },
+        {
+          label: "B. Sí, pero se trata de un documento o notificación puntual.",
+          value: "sos",
+        },
+        {
+          label: "C. Necesito analizar distintos documentos o información.",
+          value: "estrategica",
+        },
+        {
+          label: "D. Necesito conocer información económica, laboral o patrimonial.",
+          value: "estrategica",
+        },
+      ],
+    },
+    {
+      id: 4,
+      text: "¿Qué querés obtener de la consulta?",
+      options: [
+        {
+          label: "A. Saber qué significa algo y cuál es mi próximo paso.",
+          value: "sos",
+        },
+        {
+          label: "B. Tener una estrategia completa para abordar mi situación.",
+          value: "estrategica",
+        },
+        {
+          label: "C. Prepararme para una mediación.",
+          value: "empoderada",
+        },
+        {
+          label: "D. Saber cómo protegerme antes de tomar una decisión.",
+          value: "preventiva",
+        },
+      ],
+    },
+  ];
+
+  const results = {
+    preventiva: {
+      title: "TU ALIADA PREVENTIVA",
+      description: "Por lo que nos contaste, estás frente a una decisión importante y todavía estás a tiempo de anticiparte. Esta consulta está pensada para analizar riesgos y alternativas antes de asumir un compromiso.",
+      cta: "QUIERO PREVENIR",
+      link: "#quiz",
+    },
+    sos: {
+      title: "ALIADA SOS",
+      description: "Por lo que nos contaste, necesitás resolver una situación puntual y saber cuál es tu próximo paso. Esta consulta está pensada para darte claridad técnica de manera directa y ágil.",
+      cta: "NECESITO CLARIDAD",
+      link: "#quiz",
+    },
+    estrategica: {
+      title: "ALIADA ESTRATÉGICA",
+      description: "Por lo que nos contaste, tu situación necesita algo más que una respuesta puntual. Requiere análisis, información y una estrategia diseñada para tu caso.",
+      cta: "QUIERO ANALIZAR MI CASO",
+      link: "#quiz",
+    },
+    empoderada: {
+      title: "ALIADA EMPODERADA",
+      description: "Por lo que nos contaste, tenés una instancia de mediación o negociación por delante y necesitás llegar preparada, sabiendo qué querés, qué podés negociar y cuáles son tus límites.",
+      cta: "QUIERO PREPARARME",
+      link: "#quiz",
+    },
+    contact: {
+      title: "NECESITÁS AYUDA PERSONALIZADA",
+      description: "Tu situación requiere una orientación más personalizada. Te invitamos a contactarnos directamente para recibir asesoramiento específico.",
+      cta: "CONTACTAR A ALIADA",
+      link: "#contact",
+    },
+  };
+
   if (showResult) {
-    const details = serviceDetails[recommended];
+    const result = results[recommended];
     return (
       <section
         id="quiz-result"
         aria-labelledby="quiz-title"
-        className="py-20 bg-cream-50"
+        className="py-20 bg-cream"
       >
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <div className="text-center">
             <h2
               id="quiz-title"
-              className="text-3xl font-semibold text-cocoa-800 sm:text-4xl"
+              className="text-4xl font-display text-carbon sm:text-5xl"
             >
-              POR LO QUE NOS CONTASTE, HOY NECESITÁS CLARIDAD.
+              {result.title}
             </h2>
-            <p className="mt-6 text-xl text-cocoa-700">
-              Tu consulta recomendada es:
-            </p>
-          </div>
-
-          <article className="mt-10 rounded-3xl border border-blush-200 bg-white p-8 shadow-md">
-            <h3 className="text-2xl font-semibold text-cocoa-800">
-              {details.title}
-            </h3>
-            <p className="mt-3 text-lg text-cocoa-700">{details.reason}</p>
-
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <div>
-                <p className="text-sm font-semibold text-clay-700 uppercase">
-                  Precio
-                </p>
-                <p className="mt-1 text-3xl font-bold text-clay-600">
-                  {details.price}
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold text-clay-700 uppercase">
-                  Duración
-                </p>
-                <p className="mt-1 text-xl font-semibold text-cocoa-800">
-                  {details.duration}
-                </p>
-              </div>
-            </div>
-
-            <ul className="mt-6 grid gap-3 md:grid-cols-2">
-              {details.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-sage-600" />
-                  <span className="text-sm text-cocoa-700">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
+            <p className="mt-6 text-xl text-gray">{result.description}</p>
             <a
-              href={details.link}
-              className="mt-8 block w-full rounded-full bg-clay-700 px-8 py-4 text-center text-lg font-semibold text-white shadow-md transition-colors hover:bg-clay-600"
+              href={result.link}
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-green-primary px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105"
             >
-              {details.cta}
+              {result.cta}
             </a>
-
-            <p className="mt-6 text-center text-sm text-cocoa-600">
-              Este resultado es orientativo. La evaluación profesional de tu
-              situación se realiza durante la consulta.
-            </p>
-          </article>
-
-          <div className="mt-8 text-center">
-            <button
-              onClick={resetQuiz}
-              className="rounded-full border-2 border-blush-300 px-8 py-3 text-base font-semibold text-cocoa-700 transition-colors hover:bg-blush-100"
-            >
-              HACER OTRA VEZ EL TEST
-            </button>
           </div>
         </div>
       </section>
@@ -405,12 +265,10 @@ export function Quiz() {
             id="quiz-title"
             className="text-3xl font-semibold text-cocoa-800 sm:text-4xl"
           >
-            ¿NO SABÉS QUÉ CONSULTA ELEGIR?
+            ¿QUÉ CONSULTA ALIADA NECESITÁS?
           </h2>
           <p className="mt-4 text-xl text-cocoa-700">
-            No tenés que saberlo. Creé un pequeño cuestionario para ayudarte a
-            identificar qué tipo de acompañamiento puede adaptarse mejor a la
-            situación que estás atravesando.
+            No necesitás saber qué consulta elegir. Te hacemos algunas preguntas para orientarte.
           </p>
         </div>
 
@@ -434,25 +292,21 @@ export function Quiz() {
             </h3>
 
             <div className="mt-8 space-y-4">
-              {question.options.map((option) => (
+              {question.options.map((option, optionIndex) => (
                 <button
-                  key={option.value}
-                  onClick={() => handleOptionSelect(option.value, currentQuestion)}
-                  className={`w-full text-left rounded-2xl border-2 p-5 text-base transition-colors ${
-                    currentAnswer === option.value
-                      ? "border-clay-700 bg-clay-50"
-                      : "border-blush-200 hover:border-blush-300"
-                  }`}
+                  key={optionIndex}
+                  onClick={() => handleOptionSelect(optionIndex, currentQuestion)}
+                  className="w-full text-left rounded-2xl border-2 p-5 text-base transition-colors hover:border-blush-300"
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className={`mt-0.5 h-5 w-5 shrink-0 rounded-full border-2 flex items-center justify-center ${
-                        currentAnswer === option.value
+                        answers[currentQuestion] === optionIndex
                           ? "border-clay-700 bg-clay-700"
                           : "border-blush-300"
                       }`}
                     >
-                      {currentAnswer === option.value && (
+                      {answers[currentQuestion] === optionIndex && (
                         <CheckIcon className="h-3 w-3 text-white" />
                       )}
                     </div>

@@ -1,18 +1,25 @@
 import type { Metadata, Viewport } from "next";
-import { Great_Vibes, Poppins } from "next/font/google";
+import { Caveat, DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  axes: ["opsz"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const script = Great_Vibes({
-  variable: "--font-script",
+const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
   weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-dm-serif",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -48,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${poppins.variable} ${script.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${dmSerif.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <a href="#contenido" className="skip-link">
