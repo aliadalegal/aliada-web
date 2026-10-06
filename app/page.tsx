@@ -86,10 +86,10 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <a
-                href="#sobre-mi"
+                href="#encontrar-acompanamiento"
                 className="rounded-full border-2 border-white px-8 py-4 text-lg font-bold text-green-primary transition-all hover:bg-white/10"
               >
-                CONOCÉ ALIADA
+                CONOCÉ NUESTROS SERVICIOS
               </a>
             </div>
 
