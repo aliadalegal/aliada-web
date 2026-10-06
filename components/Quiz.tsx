@@ -205,13 +205,13 @@ export function Quiz() {
       title: "TU ALIADA PREVENTIVA",
       description: "Por lo que nos contaste, estás frente a una decisión importante y todavía estás a tiempo de anticiparte. Esta consulta está pensada para analizar riesgos y alternativas antes de asumir un compromiso.",
       cta: "QUIERO PREVENIR",
-      link: "#quiz",
+      link: WHATSAPP_URL,
     },
     sos: {
       title: "ALIADA SOS",
       description: "Por lo que nos contaste, necesitás resolver una situación puntual y saber cuál es tu próximo paso. Esta consulta está pensada para darte claridad técnica de manera directa y ágil.",
       cta: "NECESITO CLARIDAD",
-      link: "#quiz",
+      link: WHATSAPP_URL,
     },
     estrategica: {
       title: "ALIADA ESTRATÉGICA",
