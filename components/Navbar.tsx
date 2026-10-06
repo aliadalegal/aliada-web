@@ -27,7 +27,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-blush-200 bg-cream-50/95 backdrop-blur">
-      <div className="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-18 max-w-6xl items-center justify-center gap-8 px-4 sm:px-6">
         <Link
           href="#inicio"
           className="rounded-lg"
@@ -52,15 +52,7 @@ export function Navbar() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
-          <a
-            href="#agenda"
-            className="hidden rounded-full bg-clay-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-clay-600 sm:inline-block"
-          >
-            Agendá tu consulta
-          </a>
-
-          <button
+        <button
             type="button"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
@@ -75,7 +67,6 @@ export function Navbar() {
             )}
           </button>
         </div>
-      </div>
 
       {open && (
         <nav
@@ -96,13 +87,6 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <a
-            href="#agenda"
-            onClick={() => setOpen(false)}
-            className="mt-3 block rounded-full bg-clay-700 px-5 py-3.5 text-center text-base font-semibold text-white transition-colors hover:bg-clay-600"
-          >
-            Agendá tu consulta
-          </a>
         </nav>
       )}
     </header>

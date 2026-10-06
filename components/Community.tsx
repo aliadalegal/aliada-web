@@ -289,7 +289,7 @@ export function Community() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-4 w-full rounded-full bg-clay-700 px-8 py-4 text-lg font-semibold text-white shadow-md transition-colors hover:bg-clay-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="mt-4 w-full rounded-full bg-green-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitting ? "ENVIANDO..." : "QUIERO SER PARTE"}
               </button>

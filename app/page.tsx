@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { Quiz } from "@/components/Quiz";
@@ -64,66 +65,58 @@ export default function Home() {
         <section
           id="inicio"
           aria-labelledby="titulo-hero"
-          className="relative overflow-hidden bg-green-primary"
+          className="relative overflow-hidden"
         >
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: 'url(/images/hero-aliadas.jpg)' }} />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80" />
+            <div className="absolute inset-0 bg-cover bg-center opacity-35" style={{ backgroundImage: 'url(/images/hero-aliadas.jpg)' }} />
+            <div className="absolute inset-0 bg-gradient-to-b from-pink-50/50 via-pink-50/40 to-pink-50/50" />
           </div>
 
           <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 md:py-28">
             <h1
               id="titulo-hero"
-              className="text-5xl font-display text-white sm:text-6xl md:text-7xl"
+              className="text-5xl font-display text-carbon sm:text-6xl md:text-7xl"
             >
-              Entendé tus derechos.
-              <br />
-              Decidí informada.
+              Recuperá el poder sobre tus derechos y cambia tu vida
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white sm:text-xl font-display">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-green-primary sm:text-xl font-display">
               El derecho también puede ser una forma de cuidarte
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <a
-                href="#quiz"
-                className="rounded-full bg-white px-8 py-4 text-lg font-bold text-green-primary shadow-md transition-all hover:scale-105"
-              >
-                ENCONTRÁ TU CONSULTA
-              </a>
-              <a
                 href="#sobre-mi"
-                className="rounded-full border-2 border-white px-8 py-4 text-lg font-bold text-white transition-all hover:bg-white/10"
+                className="rounded-full border-2 border-white px-8 py-4 text-lg font-bold text-green-primary transition-all hover:bg-white/10"
               >
                 CONOCÉ ALIADA
               </a>
             </div>
 
-            <p className="mt-6 text-sm text-white/90">
+            <p className="mt-6 text-sm text-green-primary/90">
               Atención online para todo el país · Salta · Jujuy · Buenos Aires
             </p>
 
             <dl className="mx-auto mt-14 flex max-w-2xl flex-col items-center justify-center gap-8 sm:flex-row sm:gap-10">
               <div className="text-center">
-                <dt className="order-2 text-sm text-white/90">
+                <dt className="order-2 text-sm text-green-primary/90">
                   Seguidoras orgánicas
                 </dt>
-                <dd className="text-3xl font-bold text-white">7.000+</dd>
+                <dd className="text-3xl font-bold text-green-primary">7.000+</dd>
               </div>
-              <div aria-hidden="true" className="hidden h-12 w-px bg-white/30 sm:block" />
+              <div aria-hidden="true" className="hidden h-12 w-px bg-green-primary/30 sm:block" />
               <div className="text-center">
-                <dt className="order-2 text-sm text-white/90">
+                <dt className="order-2 text-sm text-green-primary/90">
                   Mujeres ya pidieron ayuda
                 </dt>
-                <dd className="text-3xl font-bold text-white">150+</dd>
+                <dd className="text-3xl font-bold text-green-primary">150+</dd>
               </div>
-              <div aria-hidden="true" className="hidden h-12 w-px bg-white/30 sm:block" />
+              <div aria-hidden="true" className="hidden h-12 w-px bg-green-primary/30 sm:block" />
               <div className="text-center">
-                <dt className="order-2 text-sm text-white/90">
+                <dt className="order-2 text-sm text-green-primary/90">
                   Dedicado a mujeres
                 </dt>
-                <dd className="text-3xl font-bold text-white">100%</dd>
+                <dd className="text-3xl font-bold text-green-primary">100%</dd>
               </div>
             </dl>
           </div>
@@ -458,10 +451,10 @@ export default function Home() {
                   Reemplazás la angustia y la parálisis por claridad técnica en solo media hora, sabiendo cuál es el próximo paso.
                 </p>
                 <a
-                  href="#quiz"
-                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-colors hover:bg-pink-light"
+                  href={WHATSAPP_URL}
+                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-all duration-300 hover:bg-green-primary/90 hover:text-white"
                 >
-                  Agendar
+                  Agendá tu consulta
                 </a>
               </article>
 
@@ -513,10 +506,10 @@ export default function Home() {
                   La tranquilidad de saber que vos, tu familia y tus proyectos están protegidos bajo un marco legal sólido antes de firmar o asumir compromisos.
                 </p>
                 <a
-                  href="#quiz"
-                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-colors hover:bg-pink-light"
+                  href={WHATSAPP_URL}
+                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-all duration-300 hover:bg-green-primary/90 hover:text-white"
                 >
-                  Agendar
+                  Agendá tu consulta
                 </a>
               </article>
 
@@ -569,10 +562,10 @@ export default function Home() {
                   Reemplazás las sospechas por certezas técnicas y ganás previsibilidad y solidez para diseñar tu estrategia.
                 </p>
                 <a
-                  href="#quiz"
-                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-colors hover:bg-pink-light"
+                  href={WHATSAPP_URL}
+                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-all duration-300 hover:bg-green-primary/90 hover:text-white"
                 >
-                  Agendar
+                  Agendá tu consulta
                 </a>
               </article>
 
@@ -625,40 +618,13 @@ export default function Home() {
                   Ingresás a la audiencia con mayor preparación, claridad y firmeza, evitando desgaste emocional innecesario.
                 </p>
                 <a
-                  href="#quiz"
-                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-colors hover:bg-pink-light"
+                  href={WHATSAPP_URL}
+                  className="mt-4 rounded-full border-2 border-green-primary py-3 text-center text-sm font-semibold text-green-primary transition-all duration-300 hover:bg-green-primary/90 hover:text-white"
                 >
-                  Agendar
+                  Agendá tu consulta
                 </a>
               </article>
             </div>
-          </div>
-        </section>
-
-        {/* ===== ¿NO SABÉS QUÉ CONSULTA ELEGIR? ===== */}
-        <section
-          id="quiz-intro"
-          aria-labelledby="titulo-quiz-intro"
-          className="py-20 bg-pink-light"
-        >
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-            <SectionHeading
-              kicker="¿No sabés qué consulta elegir?"
-              title="¿NO SABÉS QUÉ CONSULTA ELEGIR?"
-              subtitle="No tenés que saberlo. Creé un pequeño cuestionario para ayudarte a identificar qué tipo de acompañamiento puede adaptarse mejor a la situación que estás atravesando."
-              titleId="titulo-quiz-intro"
-            />
-
-            <p className="mt-6 text-lg leading-relaxed text-gray">
-              Te lleva menos de 2 minutos.
-            </p>
-
-            <a
-              href="#quiz"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-green-primary px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105"
-            >
-              ENCONTRÁ TU CONSULTA
-            </a>
           </div>
         </section>
 
@@ -669,13 +635,6 @@ export default function Home() {
           className="py-20"
         >
           <div className="mx-auto max-w-2xl px-4 sm:px-6">
-            <SectionHeading
-              kicker="¿No sabés qué consulta elegir?"
-              title="ENCONTRÁ TU CONSULTA"
-              subtitle="Te lleva menos de 2 minutos"
-              titleId="titulo-quiz"
-            />
-
             <Quiz />
           </div>
         </section>
@@ -723,8 +682,7 @@ export default function Home() {
                   <li>• Utilizar la comunicación de manera estratégica.</li>
                 </ul>
                 <form
-                  action="/api/guide-download"
-                  method="POST"
+                  id="guide-download-form"
                   className="mt-6 space-y-3"
                 >
                   <input
@@ -781,8 +739,57 @@ export default function Home() {
                     />
                   </div>
                   <button
-                    type="submit"
-                    className="w-full rounded-full bg-clay-alt px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-opacity-90"
+                    type="button"
+                    onClick={async function() {
+                      const form = document.getElementById('guide-download-form') as HTMLFormElement;
+                      if (!form) return;
+
+                      const formData = new FormData(form);
+                      const pdfUrl = '/pdfs/Respuestas%20estrategicas%202026.pdf';
+
+                      console.log('Iniciando descarga de guía...');
+                      console.log('Datos del formulario:', {
+                        guide: formData.get('guide'),
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                      });
+
+                      try {
+                        // 1. Enviar datos al API para recibir el email
+                        console.log('Enviando datos a la API...');
+                        const response = await fetch('/api/guide-download', {
+                          method: 'POST',
+                          body: formData,
+                        });
+
+                        console.log('Respuesta de la API:', {
+                          status: response.status,
+                          statusText: response.statusText,
+                        });
+
+                        if (!response.ok) {
+                          const errorData = await response.text();
+                          console.error('Error de la API:', errorData);
+                          throw new Error(`Error de la API: ${response.status} - ${response.statusText}. Detalles: ${errorData}`);
+                        }
+
+                        // 2. Crear un enlace temporal para descargar el PDF
+                        console.log('Creando enlace de descarga...');
+                        const link = document.createElement('a');
+                        link.href = pdfUrl;
+                        link.download = 'Respuestas estrategicas 2026.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        console.log('Descarga iniciada correctamente');
+
+                      } catch (error) {
+                        console.error('Error al descargar la guía:', error);
+                        alert('Hubo un error al descargar la guía. Por favor, intentá nuevamente.');
+                      }
+                    }}
+                    className="w-full rounded-full bg-green-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-primary/90"
                   >
                     <DownloadIcon className="h-4 w-4 inline" />
                     QUIERO LA GUÍA
@@ -790,22 +797,22 @@ export default function Home() {
                 </form>
               </article>
 
-              <article className="flex flex-col justify-center rounded-3xl bg-clay-alt p-7 text-white shadow-md opacity-75">
+              <article className="flex flex-col justify-center rounded-3xl bg-green-primary p-7 text-green-primary shadow-md opacity-75">
                 <span
                   aria-hidden="true"
                   className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15"
                 >
                   <HeartHandIcon className="h-6 w-6" />
                 </span>
-                <h3 className="mt-4 text-xl font-semibold">
+                <h3 className="mt-4 text-xl font-semibold text-white">
                   PRÓXIMAMENTE
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-blush-100/90">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-white">
                   Estamos preparando nuevas guías gratuitas para acompañarte en otros momentos importantes de tu camino.
                 </p>
                 <button
                   disabled
-                  className="mt-6 w-full rounded-full bg-white/20 px-5 py-3 text-sm font-semibold text-white cursor-not-allowed"
+                  className="mt-6 w-full rounded-full bg-green-primary/20 px-5 py-3 text-sm font-semibold text-green-primary cursor-not-allowed"
                 >
                   PRÓXIMAMENTE
                 </button>
@@ -981,35 +988,29 @@ export default function Home() {
         {/* ===== CTA FINAL ===== */}
         <section
           aria-labelledby="titulo-cta"
-          className="relative overflow-hidden bg-clay-alt py-20 text-white"
+          className="relative overflow-hidden bg-green-primary py-20 text-green-primary"
         >
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-white/10" />
-            <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-white/5" />
+            <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-pink/10" />
+            <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-pink/5" />
           </div>
 
           <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
             <h2
               id="titulo-cta"
-              className="text-3xl font-semibold sm:text-4xl"
+              className="text-3xl font-semibold sm:text-4xl text-white"
             >
               ¿HAY ALGO EN TU VIDA QUE NECESITÁS ENTENDER ANTES DE DECIDIR?
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-clay-100">
+            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white">
               No hace falta que tengas todo claro para empezar.
             </p>
             <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
               <a
-                href="#quiz"
-                className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-clay-alt shadow-md transition-colors hover:bg-blush-100"
-              >
-                ENCONTRÁ TU CONSULTA
-              </a>
-              <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-white/10"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 HABLÁ CON ALIADA
@@ -1027,7 +1028,7 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chateá con Aliada por WhatsApp"
-        className="fixed right-5 bottom-5 z-50 rounded-full bg-sage-600 p-4 text-white shadow-lg transition-transform hover:scale-105 hover:bg-sage-500"
+        className="fixed right-5 bottom-5 z-50 rounded-full bg-green-primary p-4 text-white shadow-lg transition-transform hover:scale-105 hover:bg-green-primary/90"
       >
         <WhatsAppIcon className="h-7 w-7" />
       </a>

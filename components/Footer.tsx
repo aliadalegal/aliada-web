@@ -30,7 +30,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com/aliada.derecho"
+                  href="https://www.instagram.com/aliadaabogada"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram de Aliada"
@@ -41,7 +41,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hola@aliada.com.ar"
+                  href="mailto:aliada.as.legal@gmail.com"
                   aria-label="Correo de Aliada"
                   className="block rounded-full bg-white/10 p-2.5 transition-colors hover:bg-white/20"
                 >
@@ -91,13 +91,13 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:hola@aliada.com.ar"
+                  href="mailto:aliada.as.legal@gmail.com"
                   className="transition-colors hover:text-white"
                 >
-                  hola@aliada.com.ar
+                  aliada.as.legal@gmail.com
                 </a>
               </li>
-              <li>@aliada.derecho en Instagram</li>
+              <li>@aliadaabogada en Instagram</li>
             </ul>
           </nav>
         </div>

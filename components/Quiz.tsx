@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckIcon } from "./icons";
+
+const WHATSAPP_URL = "https://wa.me/5493874623956";
 
 export function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -14,6 +16,16 @@ export function Quiz() {
   const [recommended, setRecommended] = useState<
     "preventiva" | "sos" | "estrategica" | "empoderada" | "contact"
   >("sos");
+
+  // Scroll a la sección de resultados cuando se muestra
+  useEffect(() => {
+    if (showResult) {
+      const resultElement = document.getElementById("quiz-result");
+      if (resultElement) {
+        resultElement.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  }, [showResult]);
 
   const handleOptionSelect = (optionIndex: number, questionIndex: number) => {
     const newAnswers = { ...answers, [questionIndex]: optionIndex };
@@ -205,19 +217,19 @@ export function Quiz() {
       title: "ALIADA ESTRATÉGICA",
       description: "Por lo que nos contaste, tu situación necesita algo más que una respuesta puntual. Requiere análisis, información y una estrategia diseñada para tu caso.",
       cta: "QUIERO ANALIZAR MI CASO",
-      link: "#quiz",
+      link: WHATSAPP_URL,
     },
     empoderada: {
       title: "ALIADA EMPODERADA",
       description: "Por lo que nos contaste, tenés una instancia de mediación o negociación por delante y necesitás llegar preparada, sabiendo qué querés, qué podés negociar y cuáles son tus límites.",
       cta: "QUIERO PREPARARME",
-      link: "#quiz",
+      link: WHATSAPP_URL,
     },
     contact: {
       title: "NECESITÁS AYUDA PERSONALIZADA",
       description: "Tu situación requiere una orientación más personalizada. Te invitamos a contactarnos directamente para recibir asesoramiento específico.",
       cta: "CONTACTAR A ALIADA",
-      link: "#contact",
+      link: WHATSAPP_URL,
     },
   };
 
@@ -257,18 +269,18 @@ export function Quiz() {
     <section
       id="quiz"
       aria-labelledby="quiz-title"
-      className="py-20 bg-sage-100"
+      className="py-4 bg-sage-100"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-2">
           <h2
             id="quiz-title"
             className="text-3xl font-semibold text-cocoa-800 sm:text-4xl"
           >
-            ¿QUÉ CONSULTA ALIADA NECESITÁS?
+            ¿NO SABÉS QUÉ CONSULTA ELEGIR?
           </h2>
           <p className="mt-4 text-xl text-cocoa-700">
-            No necesitás saber qué consulta elegir. Te hacemos algunas preguntas para orientarte.
+            No tenés que saberlo. Creé un pequeño cuestionario para ayudarte a identificar qué tipo de acompañamiento puede adaptarse mejor a la situación que estás atravesando.
           </p>
         </div>
 
@@ -317,7 +329,7 @@ export function Quiz() {
             </div>
           </div>
 
-          <p className="mt-6 text-center text-sm text-cocoa-600">
+          <p className="mt-6 text-center text-sm text-green-primary">
             Te lleva menos de 2 minutos.
           </p>
         </div>
