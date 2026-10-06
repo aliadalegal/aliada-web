@@ -86,7 +86,7 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <a
-                href="#encontrar-acompanamiento"
+                href="#servicios"
                 className="rounded-full border-2 border-white px-8 py-4 text-lg font-bold text-green-primary transition-all hover:bg-white/10"
               >
                 CONOCÉ NUESTROS SERVICIOS
